@@ -3,8 +3,10 @@ const url = "https://api.openf1.org/v1/drivers"
 
 
 async function getdriver() {
+    console.log("getdriver")
     const response = await fetch(url);
-    const data = await response.json();
+    let data = await response.json();
+data = data.splice(0, 10)
     const element = document.querySelector('.container')
 
 
@@ -16,6 +18,7 @@ async function getdriver() {
     </div>
     `
     }
+    console.log("getdriver END")
 
 }
 
